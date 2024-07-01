@@ -1,0 +1,17 @@
+[package]
+name = "konabg"
+version = "0.2.0"
+edition = "2021"
+description = "fetches a bg from konachan and updates your swww with it"
+
+[dependencies]
+reqwest = { version = "0.12", features = ["socks", "blocking"] }
+serde_json = "1.0"
+serde = { version = "1.0", features = ["derive"] }
+chrono = "0.4"
+dirs = "5.0"
+clap = { version = "4.5.7", features = ["derive"] }
+
+[profile.release]
+lto = "fat"
+strip = true
